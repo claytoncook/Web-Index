@@ -3,11 +3,9 @@ import './App.scss';
 
 import Card from './Card';
 
-import b from './combinations';
-
 
 function App() {
-  let urls = b("",2, 20, 30);
+  let urls = '';
   return (
     <div className="App">
       <h1>Web Index</h1>

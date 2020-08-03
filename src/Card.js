@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Card.scss';
 
-import urlExists from './urlExists';
+import urlExists from './helpers/urlExists';
 
 function Card(props) {
     const [status, setStatus] = useState();
