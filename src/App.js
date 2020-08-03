@@ -7,14 +7,14 @@ import b from './combinations';
 
 
 function App() {
-  let urls = b("",1, []);
+  let urls = b("",2, 20, 30);
   return (
     <div className="App">
       <h1>Web Index</h1>
       <hr></hr>
       <ul>
         {
-          urls.map((val, index) => <Card key={index} text={val} />)
+          console.log(urls)
         }
       </ul>
     </div>

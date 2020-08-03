@@ -1,25 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Card.scss';
 
 import urlExists from './urlExists';
 
 function Card(props) {
-    const status = urlExists(props.text);
-  return (
-    <li className="Card">
-        {console.log(props.text, status)}
-        {
-            status.then((val) => {
-                if(val === 0) {
-                    <a>VALID</a>
-                }
-            }).catch(() => {
-                console.log("INVALID")
-            })
-        }
-        
-    </li>
-  );
+    const [status, setStatus] = useState();
+
+    useEffect(() => {
+        urlExists(props.text).then((val) => {
+            setStatus(val);
+        })
+    })
+
+    return (
+        <li className="Card" style={{color: (status === 0) ? 'green' : 'red'}}>
+            {props.text}
+        </li>
+    );
 }
 
 export default Card;
